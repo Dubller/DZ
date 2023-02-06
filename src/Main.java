@@ -3,6 +3,17 @@ public class Main {
         System.out.print("Hello world!");
         System.out.print(" Welcome to Java");
 
-        System.out.print(" 2");
     }
+
+    static void getmassage()
+    {
+        System.out.println("This is mothod");
+    }
+
+    static void finalImprovements()
+    {
+
+    }
+
+
 }
