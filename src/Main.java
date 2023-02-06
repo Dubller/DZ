@@ -5,13 +5,14 @@ public class Main {
 
     }
 
-    static void getmassage()
+    static void getMessage()
     {
         System.out.println("This is mothod");
     }
 
     static void finalImprovements()
     {
+        System.out.println("123");
 
     }
 
