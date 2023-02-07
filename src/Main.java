@@ -24,16 +24,15 @@ public class Main {
     }
 
     static void task1() {
-        int num = -18;
-        if (num < 10 && num >= 0) {
-            System.out.println("однозначное, положительное");
-        } else if (num < 100 && num >= 10) {
-            System.out.println("двухзначное, положительное");
-        } else if (num >= 100) {
-            System.out.println("трехзначное, либо боло более цифр, также положительноре");
-        } else {
-            System.out.printf("отрицателное %d", num);
-        }
+
+        int num = 200;
+        if (num < 10 && num >= 0) {System.out.printf("'%d'однозначное, положительное", num);}
+        else if (num < 100 && num >=0) {System.out.printf("'%d'двухзначное, положительное", num);}
+        else if (num >= 100 && num>=0) {System.out.printf("'%d'трехзначное, либо более цифр, положительное", num);}
+        else if (num > -10 && num <= 0) {System.out.printf("'%d'однозначное, отрицательное", num);}
+        else if (num > -100 && num <= 0) {System.out.printf("'%d'двухзначное, отрицательное", num);}
+        else if (num <= -100 && num <=0) {System.out.printf("'%d'трехзначное, либо более цифр, отрицательное", num);}
+
     }
 
     static void task2() {
