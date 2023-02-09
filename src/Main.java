@@ -124,12 +124,22 @@ public class Main {
 
         if (n1 > n2) {
             System.out.println(n1);} else {System.out.println(n2);}
+
     }
 
 
     static void task7 () {
 
-        int p= 258;
+        int p = 1;
+        int one =1;
 
-        if (p<5) {System.out.printf("%d програмиста", p);} else {System.out.printf("%d програмистов", p); } }
+        if (p < 5) {
+            System.out.printf("%d програмиста", p);
+        } else if (p > 5) {
+            System.out.printf("%d програмистов", p);
+        } else if (p=one) {
+            System.out.printf("%d програмист", p);
+        }
+    }
+
     }
