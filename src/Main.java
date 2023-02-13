@@ -1,142 +1,186 @@
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.Random;
+
+
+
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Задание 1");
-        task1();
+         massivnumber();
+
+         // RemovingNumber();
+         // getRandomNumbers2();
+         // TwoMas();
+    }
+
+    //   0. Создайте массив целых чисел. Напишете программу, которая выводит
+    //   сообщение о том, входит ли заданное число в массив или нет. Пусть
+    //   число для поиска задается с консоли (класс Scanner).
+    static void massivnumber() {
+        System.out.print("please, enter number: ");
+        Scanner number = new Scanner(System.in); //сканер
+        String myNumber = number.nextLine();
+
+        switch (myNumber) {   // ввод оператора
+            case "1":
+                System.out.println("You enter true numer");
+                break;
+            case "2":
+                System.out.println("You enter true numer");
+                break;
+            case "3":
+                System.out.println("You enter true numer");
+                break;
+            case "4":
+                System.out.println("You enter true numer");
+                break;
+            case "5":
+                System.out.println("You enter true numer");
+                break;
+            case "6":
+                System.out.println("You enter true numer");
+                break;
+            case "7":
+                System.out.println("You enter true numer");
+                break;
+            case "8":
+                System.out.println("You enter true numer");
+                break;
+            case "9":
+                System.out.println("You enter true numer");
+                break;
+            case "10":
+                System.out.println("You enter true numer");
+                break;
+            case "11":
+                System.out.println("You enter true numer");
+                break;
+            default:
+                System.out.println("You have entered the wrong value.");
+        }
+        number.close();
+    }
+
+
+//  1. Создайте массив целых чисел. Удалите все вхождения
+//заданного числа из массива.
+//Пусть число задается с консоли (класс Scanner). Если такого числа нет
+//- выведите сообщения об этом.
+//В результате должен быть новый массив без указанного числа.
+
+    public static int[] KodRemoveNumber(int[] arr, Scanner Number) {
+        int DeleteElement = 0;  //переменная для удаления символа
+        int item = Number.nextInt();  //переменная для дальнешего кода
+
+        for (int i = 0; i < arr.length; i++) // цикл
+            if (arr[i] != item) //
+                arr[DeleteElement++] = arr[i]; //переменная для удаления
+        return Arrays.copyOf(arr, DeleteElement); // копирование кода
+    }
+
+
+    public static void RemovingNumber() {
+        int[] arroy = {2, 9, 5, 2, 25, 9, 7, 2, 1, 2, 3, 3, 3, 2, 8, 7}; //массив
+
+        Scanner Number = new Scanner(System.in); //сканер
+        {
+            for (Scanner item = Number; ; ) {  //ввод сканера
+                {
+                    arroy = KodRemoveNumber(arroy, item); //переменная
+                    System.out.println("Enter number:" + Arrays.toString(arroy));
+                    Number.close(); //закрытие сканера
+                }
+
+            }
+
+        }
+
+    }
+    //2. Создайте и заполните массив случайным числами и выведете
+    //максимальное, минимальное и среднее значение.
+    //Для генерации случайного числа используйте метод Math.random().
+    //Пусть будет возможность создавать массив произвольного
+    //размера. Пусть размер массива вводится с консоли.
+
+    static void getRandomNumbers2() {
+        System.out.print("Введите размер массива: "); // Вводим размер массива
+        Scanner Enter = new Scanner(System.in); //открываем сканер
+        int size = Enter.nextInt(); //ввод размера в код
+
+        Random randomNumber = new Random(); //рандомайзер
+        {
+            int[] mas = new int[size]; // создание массива
+            for (int i = 0; i < size; i++) {  //открываем цикл
+                mas[i] = randomNumber.nextInt(10); // вводим в массив рандомайзер. Числа до 10
+                System.out.print("               " + mas[i]); //
+                System.out.println(" ");
+                {
+                    int min = mas[i]; // переменнаая минимума
+                    int max = mas[i]; // переменная максимума
+                    int avg = 0; // переменная среднего значения
+                    {
+                        max = Math.max(max, mas[i]);  // код для подсчета
+                        min = Math.min(min, mas[i]); // код для подсчета
+                        avg += mas[i]; // код для подсчета
+
+                    }
+                    double AvgFinal = (double) avg / size; // среднее значение
+                    System.out.println("Min: " + min);
+                    System.out.println("Max: " + max);
+                    System.out.println("Avg: " + AvgFinal);
+                }
+            }
+        }
+    }
+
+
+
+    //   3. Создайте 2 массива из 5 чисел.
+    //Выведите массивы на консоль в двух отдельных строках.
+    //Посчитайте среднее арифметическое элементов каждого массива и
+    //сообщите, для какого из массивов это значение оказалось больше (либо
+    //сообщите, что их средние арифметические равны).
+    private static void TwoMas() {
+        System.out.println("Вывод двух массивов");
         System.out.println();
-        System.out.println("Задание 2");
-        task2();
+
+        int[] arrOne = {2, 25, 84, 83, 5};
+        int[] arrTwo = {5, 7, 50, 81, 3};
+        System.out.println("Массив 1 = " + Arrays.toString(arrOne));
+        System.out.println("Массив 2 = " + Arrays.toString(arrTwo));
         System.out.println();
-        System.out.println("Задание 3");
-        task3();
-        System.out.println();
-        System.out.println("Задание 4");
-        task4();
-        System.out.println();
-        System.out.println("Задание 5");
-        task5();
-        System.out.println();
-        System.out.println("Задание 6");
-        task6();
-        System.out.println();
-        System.out.println("Задание 7");
-        task7();
-        System.out.println();
+
+        int ArrOne = 0;
+        int ArrTwo = 0;
+        for (int i = 0; i < arrOne.length; i++) {
+            ArrOne = arrOne[i];
+            ArrTwo = arrTwo[i];}
+
+
+        ArrOne /= arrOne.length;
+        ArrTwo /= arrTwo.length;
+
+        if (ArrOne == ArrTwo) {System.out.println("Массивы равны ");}
+        else if (ArrOne > ArrTwo)
+        {System.out.println("Первый массив больше второго");}
+        else System.out.println("Второй массив больше первого");
     }
-
-    static void task1() {
-
-        int num = 200;
-        if (num < 10 && num >= 0) {System.out.printf("'%d'однозначное, положительное", num);}
-        else if (num < 100 && num >=0) {System.out.printf("'%d'двухзначное, положительное", num);}
-        else if (num >= 100 && num>=0) {System.out.printf("'%d'трехзначное, либо более цифр, положительное", num);}
-        else if (num > -10 && num <= 0) {System.out.printf("'%d'однозначное, отрицательное", num);}
-        else if (num > -100 && num <= 0) {System.out.printf("'%d'двухзначное, отрицательное", num);}
-        else if (num <= -100 && num <=0) {System.out.printf("'%d'трехзначное, либо более цифр, отрицательное", num);}
-
-    }
-
-    static void task2() {
-        int A = 1;
-        int B = 25;
-        int C = 19;
-
-        int sumAB = A + B;
-        int sumBC = B + C;
-        int sumCA = C + A;
-
-        if (sumCA > B) {
-            System.out.println("Сумма CA больше B. Треугольник может существует");
-        } else {
-            System.out.println("Треугольник СА>B не существуе");
-        }
-
-        if (sumBC > A) {
-            System.out.println("Сумма BC больше A. Треугольник может существует ");
-        } else {
-            System.out.println("Треугольник BC>A не может существовать ");
-        }
-
-        if (sumAB > C) {
-            System.out.println("Сумма AB больше C. Треугольник может существует ");
-        } else {
-            System.out.println("Треугольник AB>C не может существовать ");
-        }
-    }
-
-    static void task3() {
-
-        int NZero = 654;
-
-        if (NZero > 0) {
-            NZero++;
-            System.out.println(NZero);
-        } else if (NZero < 0) {
-            NZero -= 2;
-            System.out.println(NZero);
-        } else {
-            NZero = 10;
-            System.out.println(NZero);
-        }
-    }
+}
 
 
-    static void task4() {
-
-        int n1 = 9;
-        int n2 = 5;
-        int n3 = -9;
-        int PN = 0;
-
-        if (n1 >= PN) {
-            PN++;
-        }
-        if (n2 >= PN) {
-            PN++;
-        }
-        if (n3 >= PN) {
-            PN++;
-        }
-        System.out.printf("Колличество положительных чисел является (%d)", PN);
-    }
-    static void task5() {
-        int n1 = -1;
-        int n2 = -2;
-        int n3 = -25842;
-        int pn = 0;
-        int mn = 0;
-
-        if (n1<mn) {mn++;}
-        if (n1>pn) {pn++;}
-
-        if (n2<mn) {mn++;}
-        if (n2>pn) {pn++;}
-
-        if (n3<mn) {mn++;}
-        if (n3>pn) {pn++;}
-        System.out.printf("Число положителбных числе (%d),число отрицателных числе(%d)", pn, mn);
 
 
-    }
-
-    static void task6 () {
-        int n1 = 85648;
-        int n2 = 48447;
-
-        if (n1 > n2) {
-            System.out.println(n1);} else {System.out.println(n2);}
-
-    }
 
 
-    static void task7 () {
 
-        int p = 654;
 
-        if (p < 5) {
-            System.out.printf("%d програмиста", p);
-        } else {
-            System.out.printf("%d програмистов", p);
-        }
-    }
 
-    }
+
+
+
+
+
+
+
+
