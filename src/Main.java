@@ -1,28 +1,45 @@
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.Random;
-
-
-
 
 public class Main {
     public static void main(String[] args) {
-        XorO();
-
+        crietedMass();
+        //XorO();
+    }
+    public static void crietedMass() {
+                int[][] array = {
+                {1, 5, 1, 8},
+                {7, 85, 4, 0},
+                {7, 5, -9, 7}
+        };
+        System.out.println(Arrays.deepToString(array));
+        System.out.println("На сколько увеличить? : ");
+        Scanner getNumber = new Scanner(System.in);
+        int number = getNumber.nextInt();
+        getNumber.close();
+        for (int i = 0; i < array.length; i++) {
+            for (int o = 0; o < array[i].length; o++) {
+                array[i][o] += number;
+            }
+        }
+        System.out.println(Arrays.deepToString(array));
     }
 
     public static void XorO() {
-        char[][] DoubleArroy = new char[3][3];
-        char[] Simbols = {'X', 'O'};
+        Scanner number = new Scanner(System.in);
+        System.out.println("Введите размерность доски: ");
+        if (number.hasNextInt()) {
+            int num1 = number.nextInt();
+            int num2 = number.nextInt();
 
-        for (int rows = 0, Simbol = 0; rows < 1DuubleArroy.length; rows++) ;
-        {
-            for (int cols = 0; cols < DoubleArroy[rows].length; cols++) ;
-            {
-                DoubleArroy[rows][cols] = Simbols[Simbol];
-                Simbol = (Simbol = 0) ? ++Simbol : --Simbol;
+            for (int i = 0; i < num1; i++) {
+                for (int j = 0; j < num2; j++)
+                    if ((i + j) % 2 == 0)
+                        System.out.print("X ");
+                    else
+                        System.out.print("O ");
+                System.out.println();
             }
-
         }
     }
 }
