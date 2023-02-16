@@ -6,8 +6,9 @@ public class Main {
         crietedMass();
         //XorO();
     }
+
     public static void crietedMass() {
-                int[][] array = {
+        int[][] array = {
                 {1, 5, 1, 8},
                 {7, 85, 4, 0},
                 {7, 5, -9, 7}
@@ -39,6 +40,33 @@ public class Main {
                     else
                         System.out.print("O ");
                 System.out.println();
+            }
+        }
+    }
+
+    public static void twoMas() {
+        int[][] mas1 = {
+                {1, 0, 0, 0},
+                {0, 1, 0, 0},
+                {0, 0, 0, 0}
+        };
+        int[][] mas2 = {
+                {1, 2, 3},
+                {1, 1, 1},
+                {0, 0, 0},
+                {2, 1, 0}
+        };
+
+        int[][] mas3 = new int[3][3];
+
+        for (int i<0; i < mas1.length; i++)
+        {
+            for (int o <0; o < mas2.length; o++)
+            {
+                for (int p <0; p < mas3.length; p++)
+                {
+                    mas3[i][o] + -mas1[i][p] * mas2[p][o];
+                }
             }
         }
     }
