@@ -18,48 +18,21 @@ public class Main {
     //   сообщение о том, входит ли заданное число в массив или нет. Пусть
     //   число для поиска задается с консоли (класс Scanner).
     static void massivnumber() {
-        System.out.print("please, enter number: ");
-        Scanner number = new Scanner(System.in); //сканер
-        String myNumber = number.nextLine();
+        int[] mass1 = {1,-4,8,9};
 
-        switch (myNumber) {   // ввод оператора
-            case "1":
-                System.out.println("You enter true numer");
-                break;
-            case "2":
-                System.out.println("You enter true numer");
-                break;
-            case "3":
-                System.out.println("You enter true numer");
-                break;
-            case "4":
-                System.out.println("You enter true numer");
-                break;
-            case "5":
-                System.out.println("You enter true numer");
-                break;
-            case "6":
-                System.out.println("You enter true numer");
-                break;
-            case "7":
-                System.out.println("You enter true numer");
-                break;
-            case "8":
-                System.out.println("You enter true numer");
-                break;
-            case "9":
-                System.out.println("You enter true numer");
-                break;
-            case "10":
-                System.out.println("You enter true numer");
-                break;
-            case "11":
-                System.out.println("You enter true numer");
-                break;
-            default:
-                System.out.println("You have entered the wrong value.");
-        }
-        number.close();
+
+             Scanner scanner = new Scanner(System.in);
+             System.out.println("Введите цифру от 0 до 10, и программа проверит, входит ли данная цифра в массив: ");
+             int numMass = scanner.nextInt();
+             scanner.close();
+
+        for (int i= 0; i<mass1.length; i++){
+            if (mass1[i] == numMass) {
+                System.out.println(numMass +": входит в массив");
+                return;
+            }
+             }
+        System.out.println(numMass+ ": не входит в массив");
     }
 
 
@@ -167,20 +140,3 @@ public class Main {
         else System.out.println("Второй массив больше первого");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
