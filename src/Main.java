@@ -1,135 +1,159 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Main {
+
+    //1. Создать двухмерный массив из целых чисел.
+    //С помощью циклов "пройти" по всему массиву и увеличить каждый
+    //элемент на заданное число. Пусть число, на которое будет
+    //увеличиваться каждый элемент, задается из консоли.
     public static void main(String[] args) {
-        System.out.println("Задание 1");
-        task1();
-        System.out.println();
-        System.out.println("Задание 2");
-        task2();
-        System.out.println();
-        System.out.println("Задание 3");
-        task3();
-        System.out.println();
-        System.out.println("Задание 4");
-        task4();
-        System.out.println();
-        System.out.println("Задание 5");
-        task5();
-        System.out.println();
-        System.out.println("Задание 6");
-        task6();
-        System.out.println();
-        System.out.println("Задание 7");
-        task7();
-        System.out.println();
+        // crietedMass();
+        //XorO();
+        //twoMass();
+        //doubleMas();
+        //digMass();
+        sorterMass();
     }
 
-    static void task1() {
-
-        int num = 200;
-        if (num < 10 && num >= 0) {System.out.printf("'%d'однозначное, положительное", num);}
-        else if (num < 100 && num >=0) {System.out.printf("'%d'двухзначное, положительное", num);}
-        else if (num >= 100 && num>=0) {System.out.printf("'%d'трехзначное, либо более цифр, положительное", num);}
-        else if (num > -10 && num <= 0) {System.out.printf("'%d'однозначное, отрицательное", num);}
-        else if (num > -100 && num <= 0) {System.out.printf("'%d'двухзначное, отрицательное", num);}
-        else if (num <= -100 && num <=0) {System.out.printf("'%d'трехзначное, либо более цифр, отрицательное", num);}
-
+    public static void crietedMass() {
+        int[][] array = {
+                {1, 5, 1, 8},
+                {7, 85, 4, 0},
+                {7, 5, -9, 7}
+        };
+        System.out.println(Arrays.deepToString(array));
+        System.out.println("На сколько увеличить? : ");
+        Scanner getNumber = new Scanner(System.in);
+        int number = getNumber.nextInt();
+        getNumber.close();
+        for (int i = 0; i < array.length; i++) {
+            for (int o = 0; o < array[i].length; o++) {
+                array[i][o] += number;
+            }
+        }
+        System.out.println(Arrays.deepToString(array));
     }
 
-    static void task2() {
-        int A = 1;
-        int B = 25;
-        int C = 19;
 
-        int sumAB = A + B;
-        int sumBC = B + C;
-        int sumCA = C + A;
+    //2. Шахматная доска
+    //Создать программу для раскраски шахматной доски с помощью цикла.
+    //Создать двумерный массив String'ов 8х8. С помощью циклов задать
+    //элементам циклам значения B(Black) или W(White)
+    public static void XorO() {
+        Scanner number = new Scanner(System.in);
+        System.out.println("Введите размерность доски: ");
+        if (number.hasNextInt()) {
+            int num1 = number.nextInt();
+            int num2 = number.nextInt();
 
-        if (sumCA > B) {
-            System.out.println("Сумма CA больше B. Треугольник может существует");
-        } else {
-            System.out.println("Треугольник СА>B не существуе");
-        }
-
-        if (sumBC > A) {
-            System.out.println("Сумма BC больше A. Треугольник может существует ");
-        } else {
-            System.out.println("Треугольник BC>A не может существовать ");
-        }
-
-        if (sumAB > C) {
-            System.out.println("Сумма AB больше C. Треугольник может существует ");
-        } else {
-            System.out.println("Треугольник AB>C не может существовать ");
+            for (int i = 0; i < num1; i++) {
+                for (int j = 0; j < num2; j++)
+                    if ((i + j) % 2 == 0)
+                        System.out.print("W ");
+                    else
+                        System.out.print("B ");
+                System.out.println();
+            }
         }
     }
 
-    static void task3() {
+    //3. Умножение двух матриц
+    //Создайте два массива целых чисел размером 3х3 (две
+    //матрицы). Напишите программу для умножения двух матриц.
+    //Первый массив: {{1,0,0,0},{0,1,0,0},{0,0,0,0}}
+    //Второй массив: {{1,2,3},{1,1,1},{0,0,0},{2,1,0}}
+    //Ожидаемый результат: 1 2 3 1 1 1 0 0 0
+    public static void twoMass() {
+        int[][] mas1 = {
+                {1, 0, 0, 0},
+                {0, 1, 0, 0},
+                {0, 0, 0, 0}
+        };
+        int[][] mas2 = {
+                {1, 2, 3},
+                {1, 1, 1},
+                {0, 0, 0},
+                {2, 1, 0}
+        };
 
-        int NZero = 654;
+        int[][] mas3 = new int[3][3];
 
-        if (NZero > 0) {
-            NZero++;
-            System.out.println(NZero);
-        } else if (NZero < 0) {
-            NZero -= 2;
-            System.out.println(NZero);
-        } else {
-            NZero = 10;
-            System.out.println(NZero);
+        for (int i = 0; i < mas1.length; i++) {
+            for (int j = 0; j < mas2[i].length; j++) {
+                for (int k = 0; k < mas1[i].length; k++) {
+                    mas3[i][j] += mas1[i][k] * mas2[k][j];
+                }
+            }
+        }
+        System.out.println(Arrays.deepToString(mas3));
+    }
+
+
+    //4. Создайте двумерный массив целых чисел. Выведите на консоль сумму
+    //всех элементов массива
+    private static void doubleMass() {
+
+        int[][] mas = {
+                {2, 5, 8, 7},
+                {2, 4, 8, -7},
+                {8, 5, 2, 22},
+                {7, -2, -99, 1}
+        };
+        int sum = 0;
+        for (int i = 0; i < mas.length; i++) {
+            for (int o = 0; o < mas[i].length; o++) {
+                sum += mas[i][o];
+            }
+            System.out.println(Arrays.deepToString(mas));
+            System.out.println("Общая сумма массивов составляет: " + sum);
         }
     }
 
 
-    static void task4() {
+    //5. Создайте двумерный массив. Выведите на консоль диагонали массива.
 
-        int n1 = 9;
-        int n2 = 5;
-        int n3 = -9;
-        int PN = 0;
+    private static void digMass() {
 
-        if (n1 >= PN) {
-            PN++;
+        int[][] mas = {
+                {1, 2, 3, 4},
+                {1, 2, 3, 4},
+                {1, 2, 3, 4},
+                {1, 2, 3, 4}
+        };
+
+        System.out.println("Вертикаль:");
+        for (int i = 0; i < mas.length; i++) {
+            for (int o = 0; o < mas[i].length; o++) {
+                if (i == o) {
+                    System.out.println(mas[i][o] + " ");
+                }
+            }
         }
-        if (n2 >= PN) {
-            PN++;
+
+        System.out.println();
+        System.out.println("Горизонталь: ");
+        for (int i = 0; i < mas.length; i++) {
+            for (int o = 0; o < mas[i].length; o++) {
+                if (i + o == mas.length - 1) {
+                    System.out.print(mas[i][o] + " ");
+                }
+            }
         }
-        if (n3 >= PN) {
-            PN++;
+        System.out.println();
+    }
+
+
+    //6. Создайте двумерный массив целых чисел. Отсортируйте элементы в
+    //строках двумерного массива по возрастанию
+
+    private static void sorterMass() {
+
+        int[][] mass = {{4, 2, 1, 5, 3}, {10,8,6,9,7} };
+
+        for (int[] inst : mass ) {
+            Arrays.sort(inst);
+            System.out.println(Arrays.toString(inst));
         }
-        System.out.printf("Колличество положительных чисел является (%d)", PN);
     }
-    static void task5() {
-        int n1 = -1;
-        int n2 = -2;
-        int n3 = -25842;
-        int pn = 0;
-        int mn = 0;
-
-        if (n1<mn) {mn++;}
-        if (n1>pn) {pn++;}
-
-        if (n2<mn) {mn++;}
-        if (n2>pn) {pn++;}
-
-        if (n3<mn) {mn++;}
-        if (n3>pn) {pn++;}
-        System.out.printf("Число положителбных числе (%d),число отрицателных числе(%d)", pn, mn);
-
-
-    }
-
-    static void task6 () {
-        int n1 = 85648;
-        int n2 = 48447;
-
-        if (n1 > n2) {
-            System.out.println(n1);} else {System.out.println(n2);}
-    }
-
-
-    static void task7 () {
-
-        int p= 258;
-
-        if (p<5) {System.out.printf("%d програмиста", p);} else {System.out.printf("%d програмистов", p); } }
-    }
+}
