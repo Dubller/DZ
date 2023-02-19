@@ -7,11 +7,11 @@ import java.util.Random;
 
 public class Main {
     public static void main(String[] args) {
-         massivnumber();
+         // massivnumber();
 
-         // RemovingNumber();
+          //KodRemoveNumber();
          // getRandomNumbers2();
-         // TwoMas();
+            TwoMas();
     }
 
     //   0. Создайте массив целых чисел. Напишете программу, которая выводит
@@ -42,70 +42,68 @@ public class Main {
 //- выведите сообщения об этом.
 //В результате должен быть новый массив без указанного числа.
 
-    public static int[] KodRemoveNumber(int[] arr, Scanner Number) {
-        int DeleteElement = 0;  //переменная для удаления символа
-        int item = Number.nextInt();  //переменная для дальнешего кода
+     static void  KodRemoveNumber() {
+        int[] mass = {5,5,1,1,};
+         System.out.println("Введите число для удаления из массива: ");
+        Scanner delNum = new Scanner(System.in);
+        int item = delNum.nextInt();
+        int newmass = 0;
 
-        for (int i = 0; i < arr.length; i++) // цикл
-            if (arr[i] != item) //
-                arr[DeleteElement++] = arr[i]; //переменная для удаления
-        return Arrays.copyOf(arr, DeleteElement); // копирование кода
-    }
+         for (int p = 0; p < mass.length; p++)
+         {
+             if (mass[p] != item)
+             {
+                 mass[newmass++] = mass[p];
+             }
+         }
+         if (newmass == 0) {
+             System.out.println();
+     } else {
+        System.out.println("Массив без удаленного числа :");
 
-
-    public static void RemovingNumber() {
-        int[] arroy = {2, 9, 5, 2, 25, 9, 7, 2, 1, 2, 3, 3, 3, 2, 8, 7}; //массив
-
-        Scanner Number = new Scanner(System.in); //сканер
+        for (int p = 0; p < newmass; p++)
         {
-            for (Scanner item = Number; ; ) {  //ввод сканера
-                {
-                    arroy = KodRemoveNumber(arroy, item); //переменная
-                    System.out.println("Enter number:" + Arrays.toString(arroy));
-                    Number.close(); //закрытие сканера
-                }
-
-            }
-
+            System.out.print(mass[p] + " ");
         }
-
     }
+}
+
     //2. Создайте и заполните массив случайным числами и выведете
     //максимальное, минимальное и среднее значение.
     //Для генерации случайного числа используйте метод Math.random().
     //Пусть будет возможность создавать массив произвольного
     //размера. Пусть размер массива вводится с консоли.
 
-    static void getRandomNumbers2() {
-        System.out.print("Введите размер массива: "); // Вводим размер массива
-        Scanner Enter = new Scanner(System.in); //открываем сканер
-        int size = Enter.nextInt(); //ввод размера в код
+    private static void getRandomNumbers2() {
 
-        Random randomNumber = new Random(); //рандомайзер
-        {
-            int[] mas = new int[size]; // создание массива
-            for (int i = 0; i < size; i++) {  //открываем цикл
-                mas[i] = randomNumber.nextInt(10); // вводим в массив рандомайзер. Числа до 10
-                System.out.print("               " + mas[i]); //
-                System.out.println(" ");
-                {
-                    int min = mas[i]; // переменнаая минимума
-                    int max = mas[i]; // переменная максимума
-                    int avg = 0; // переменная среднего значения
-                    {
-                        max = Math.max(max, mas[i]);  // код для подсчета
-                        min = Math.min(min, mas[i]); // код для подсчета
-                        avg += mas[i]; // код для подсчета
 
-                    }
-                    double AvgFinal = (double) avg / size; // среднее значение
-                    System.out.println("Min: " + min);
-                    System.out.println("Max: " + max);
-                    System.out.println("Avg: " + AvgFinal);
-                }
-            }
-        }
+        Scanner scr = new Scanner(System.in);// Открываем сканнер.
+        System.out.println("Введите размер массива: ");
+    int size = scr.nextInt(); // Инициализируем переменную со сканнером.
+        scr.close(); // Закрываем сканнер.
+    int[] mass = new int[size]; // Создаем массив.
+    Random random = new Random(); // Инициализируем рандом.
+
+        for (int i = 0; i < size; i++) // Открываем цикл.
+    {
+        mass[i] = random.nextInt(10);
     }
+    int maximumValue = mass[0]; // Максимальное значение.
+    int minimumValue = mass[0]; // Минимальное значение.
+    int sum = 0; // Сумма.
+
+        for (int o = 0; o < size; o++) // Открываем цикл.
+    {
+        maximumValue = Math.max(maximumValue, mass[o]);
+        minimumValue = Math.min(minimumValue, mass[o]);
+        sum += mass[o];
+    }
+    double averageValue = (double) sum / size; // Выводим двойное среднее значение.
+        System.out.println(Arrays.toString(mass));
+        System.out.println("Максимальное значение числа в массиве : " + maximumValue);
+        System.out.println("Минимальное значение числа в массиве : " + minimumValue);
+        System.out.println("Среднее значение всех числел в массиве : " + averageValue);
+}
 
 
 
@@ -118,25 +116,25 @@ public class Main {
         System.out.println("Вывод двух массивов");
         System.out.println();
 
-        int[] arrOne = {2, 25, 84, 83, 5};
-        int[] arrTwo = {5, 7, 50, 81, 3};
+        int[] arrOne = {2, 3, 4, 5, 1};
+        int[] arrTwo = {2, 3, 4, 5, 12};
+        int sumNumOne = 0;
+        int sumNumTwo = 0;
         System.out.println("Массив 1 = " + Arrays.toString(arrOne));
         System.out.println("Массив 2 = " + Arrays.toString(arrTwo));
         System.out.println();
 
-        int ArrOne = 0;
-        int ArrTwo = 0;
-        for (int i = 0; i < arrOne.length; i++) {
-            ArrOne = arrOne[i];
-            ArrTwo = arrTwo[i];}
+        for (int sumOne = 0; sumOne < arrOne.length; sumOne++) {
+            sumNumOne += arrOne[sumOne];
+        }
+        for (int sumTwo =0; sumTwo <arrTwo.length; sumTwo++) {
+            sumNumTwo += arrTwo[sumTwo];
+        }
+        int sumMass1 = sumNumOne / arrOne.length;
+        int sumMass2 = sumNumTwo / arrTwo.length;
 
-
-        ArrOne /= arrOne.length;
-        ArrTwo /= arrTwo.length;
-
-        if (ArrOne == ArrTwo) {System.out.println("Массивы равны ");}
-        else if (ArrOne > ArrTwo)
-        {System.out.println("Первый массив больше второго");}
-        else System.out.println("Второй массив больше первого");
+        if (sumNumOne < sumNumTwo) {System.out.println("Второй массив больше первого");}
+        else if (sumNumOne > sumNumTwo) {System.out.println("Первый массив больше второго");}
+        else System.out.println("Массивы равны");
     }
 }
