@@ -31,6 +31,7 @@ public class CreditCard {
         System.out.println();
     }
 
+    //Метод для снятия суммы
     public void takeOff(int cardSum0) {
         if (cardSum0 > cardSum) {
             cardSum = 0;
@@ -41,6 +42,7 @@ public class CreditCard {
     }
 
 
+    // Метот начисления суммы
     public void addSum(int cardSum1) {
         cardSum += cardSum1;
     }
