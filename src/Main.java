@@ -10,10 +10,10 @@ public class Main {
     public static void main(String[] args) {
         // crietedMass();
         //XorO();
-        //twoMass();
+//        twoMass();
         //doubleMas();
         //digMass();
-        sorterMass();
+        //sorterMass();
     }
 
     public static void crietedMass() {
@@ -146,14 +146,12 @@ public class Main {
 
     //6. Создайте двумерный массив целых чисел. Отсортируйте элементы в
     //строках двумерного массива по возрастанию
+        private static void sorterMass() {
 
-    private static void sorterMass() {
-
-        int[][] mass = {{4, 2, 1, 5, 3}, {10,8,6,9,7} };
-
-        for (int[] inst : mass ) {
-            Arrays.sort(inst);
-            System.out.println(Arrays.toString(inst));
+        int[][] mass = {{4, 2, 1, 5, 3}, {10, 8, 6, 9, 7}};
+        for (int index = 0; index < mass.length; index++) {
+            Arrays.sort(mass[index]);
+            System.out.println(Arrays.toString(mass[index]));
         }
     }
 }
