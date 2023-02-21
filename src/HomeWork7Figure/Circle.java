@@ -1,4 +1,4 @@
-package HomeWork7;
+package HomeWork7Figure;
 
 public class Circle extends Figure {  // круг
 
