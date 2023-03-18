@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo3.HelloController">
+   <children>
+      <Button layoutX="263.0" layoutY="79.0" mnemonicParsing="false" onAction="#btnAdd" prefHeight="25.0" prefWidth="80.0" text="Добавить" />
+      <ListView fx:id="outPutEng" layoutX="48.0" layoutY="77.0" prefHeight="294.0" prefWidth="200.0" />
+      <TextField fx:id="input" layoutX="48.0" layoutY="33.0" prefHeight="25.0" prefWidth="510.0" />
+      <ListView fx:id="outPutRuss" layoutX="358.0" layoutY="79.0" prefHeight="294.0" prefWidth="200.0" />
+      <Button layoutX="263.0" layoutY="122.0" mnemonicParsing="false" onAction="#btnRed" prefHeight="25.0" prefWidth="80.0" text="Редактировать" />
+      <Button layoutX="263.0" layoutY="164.0" mnemonicParsing="false" onAction="#btnDell" prefHeight="25.0" prefWidth="80.0" text="Удалить" />
+      <Button layoutX="260.0" layoutY="346.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="88.0" text="Закрыть Приложение" onAction="#closeProgram"/>
+   </children>
+</AnchorPane>
