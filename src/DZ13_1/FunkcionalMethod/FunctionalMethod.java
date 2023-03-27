@@ -1,4 +1,4 @@
-package FunkcionalMethod;
+package DZ13_1.FunkcionalMethod;
 
 @FunctionalInterface
 public interface FunctionalMethod<T, R>{

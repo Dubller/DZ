@@ -1,4 +1,4 @@
-package FunkcionalMethod;
+package DZ13_1.FunkcionalMethod;
 
 import java.util.Scanner;
 
